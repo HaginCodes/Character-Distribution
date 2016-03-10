@@ -46,3 +46,7 @@ for x in alphabet:
     a = 0
     b = []
     while a < counter:
+        a += 1
+        b.append(x)
+    if b != []:
+        foo = "".join(c for c
