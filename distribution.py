@@ -49,4 +49,8 @@ for x in alphabet:
         a += 1
         b.append(x)
     if b != []:
-        foo = "".join(c for c
+        foo = "".join(c for c in b)
+        table.append(foo)
+table.sort(key = len, reverse= Tru)
+for d in list(table):
+    print(d)
