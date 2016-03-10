@@ -38,11 +38,11 @@ Notice about this example:
 
 user = input("Please enter a string of text (the bigger the better): ")
 print("The distribution of characters in "+ user + " is: ")
-alphabet = ['a','b','c','d','f','g','h','i','j','k','l','m','o','p','q','r','s','t','u','v','w','x','y','z']
+alphabet = ['a','b','c','d','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z']
 table = []
-userstr = usersti.lower()
+user = user.lower()
 for x in alphabet:
-    counter = userstr.counter(x) 
+    counter = user.count(x) 
     a = 0
     b = []
     while a < counter:
@@ -51,6 +51,6 @@ for x in alphabet:
     if b != []:
         foo = "".join(c for c in b)
         table.append(foo)
-table.sort(key = len, reverse= Tru)
+table.sort(reverse = True)
 for d in list(table):
     print(d)
