@@ -35,22 +35,28 @@ Notice about this example:
   in the text and they are listed in the output in alphabetical order.
 * Letters that do not occur in the text are not listed in the output at all.
 """
+import string
 
-user = input("Please enter a string of text (the bigger the better): ")
-print("The distribution of characters in "+ user + " is: ")
-alphabet = ['a','b','c','d','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z']
-table = []
-user = user.lower()
-for x in alphabet:
-    counter = user.count(x) 
-    a = 0
-    b = []
-    while a < counter:
-        a += 1
-        b.append(x)
-    if b != []:
-        foo = "".join(c for c in b)
-        table.append(foo)
-table.sort(reverse = True)
-for d in list(table):
-    print(d)
+
+question = input("Please enter a string of text (the bigger the better): ")
+text = question.lower()
+print('The distribution of characters in "'+question+'" is: ')
+
+letters = 26
+chance = 0
+
+while letters > 0:
+    if text.count(string.ascii_lowercase[-letters]) > chance:
+        chance = text.count(string.ascii_lowercase[-letters])
+    letters-= 1
+
+letters = 26
+
+while chance > 0:
+    while letters > 0:
+        if text.count(string.ascii_lowercase[-letters]) == chance:
+            print(string.ascii_lowercase[-letters]*chance)
+        letters -= 1
+    letters = 26
+    chance -= 1
+
